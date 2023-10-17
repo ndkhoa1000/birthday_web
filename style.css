@@ -11,12 +11,17 @@ body {
     align-items: center;
     font-family: sans-serif;
     background-color: powderblue;
+
+    aspect-ratio: 900/600;
+    background-image: url("layer1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /* book */
 .book {
     position: relative;
-    width:350px;
-    height: 500px;
+    width:450px;
+    height: 600px;
     transition: transform 0.5s;
 }
 .paper{
@@ -29,21 +34,22 @@ body {
 }
 .front, 
 .back{
-    background-color: white;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left:0;
+    border-radius:20px;
     transform-origin: left ;
     transition: transform 0.5s;
 }
 .front{
+    background-color: rgb(235, 229, 229);
     z-index: 1;
     backface-visibility: hidden;
-    border-left: 5px solid powderblue;
 }
 .back{
+    background-color: whitesmoke;
     z-index:0;
 }
 .front-content,
@@ -54,6 +60,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+#f1,#b1, #f2 {
+    display: flex;
+    flex-direction: column;
+}
 .back-content{
     transform: rotateY(180deg);
 }
@@ -61,6 +71,21 @@ body {
 .flip .front,
 .flip .back{
     transform: rotateY(-180deg);
+}
+/* wish paper */
+#b1 {
+    display: flex;
+    justify-content: center;
+}
+#b1 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    margin: 20px;
+}
+.fa-heart {
+    color: red;
+    font-size: 100px;
 }
 /* controller buttons */
 button{
@@ -74,7 +99,7 @@ button:focus{
     outline: none;
 }
 button:hover{
-    corlor: #636363;
+    color: #636363;
 }
 i{
     font-size: 50px;

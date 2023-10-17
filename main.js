@@ -5,17 +5,16 @@ const book = document.querySelector("#book");
 
 const paper1 = document.querySelector("#p1");
 const paper2 = document.querySelector("#p2");
-const paper3 = document.querySelector("#p3");
 
 //business logic
     let currentLocation = 1;
-    let numOfPapers = 3;
+    let numOfPapers = 2;
     let maxLocation = numOfPapers + 1;
     
 const openBook= () =>{
     book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+    prevBtn.style.transform = "translateX(-250px)";
+    nextBtn.style.transform = "translateX(250px)";
 }
 const closeBook = (isAtBeginning) => {
     if(isAtBeginning){
@@ -39,10 +38,6 @@ const goNextPage = () =>{
             case 2:
                 paper2.classList.add("flip");
                 paper2.style.zIndex = 2;
-                break;
-            case 3:
-                paper3.classList.add("flip");
-                paper3.style.zIndex = 3;
                 closeBook(false);
                 break;
             default:
@@ -57,16 +52,12 @@ const goPrevPage = () => {
             case 2:
                 closeBook(true);
                 paper1.classList.remove("flip");
-                paper1.style.zIndex = 3;
+                paper1.style.zIndex = 2;
                 break;
             case 3:
-                paper2.classList.remove("flip");
-                paper2.style.zIndex = 2;
-                break;
-            case 4:
                 openBook();
-                paper3.classList.remove("flip");
-                paper3.style.zIndex = 1;
+                paper2.classList.remove("flip");
+                paper2.style.zIndex = 1;
                 break;
             default:
                 throw new Error("unknown state");
