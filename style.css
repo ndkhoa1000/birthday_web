@@ -83,9 +83,9 @@ body {
     align-items: center;    
     margin: 20px;
 }
-.fa-heart {
-    color: red;
-    font-size: 100px;
+h1,h3{
+    color: palevioletred;
+    padding: 5px;
 }
 /* controller buttons */
 button{
@@ -99,11 +99,15 @@ button:focus{
     outline: none;
 }
 button:hover{
-    color: #636363;
+    border-radius: 40%;
+    background-color: palevioletred;
+    opacity: 0.3;
+    box-shadow: 0 25px 50px -12px black;
 }
-i{
-    font-size: 50px;
-    color:gray;
+button > img{
+    width: 40px;
+    background-color: transparent;
+    padding: 4px 5px 1px 5px;
 }
 /* paper stack order */
 #p1{
